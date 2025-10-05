@@ -1,0 +1,37 @@
+[2025-10-05 17:17:47,033] 17 root -INFO - Initiate data ingestion 
+[2025-10-05 17:18:10,852] 65 root -INFO - Performed train test split on the dataframe
+[2025-10-05 17:18:10,852] 67 root -INFO - Exited split_data_as_train_test method of Data_Ingestion class
+[2025-10-05 17:18:10,853] 75 root -INFO - Exporting train and test file path.
+[2025-10-05 17:18:10,940] 84 root -INFO - Exported train and test file path.
+[2025-10-05 17:18:10,941] 19 root -INFO - Data initiation completed
+[2025-10-05 17:18:10,951] 24 root -INFO - Initiate data validation
+[2025-10-05 17:18:11,077] 31 root -INFO - Required number of columns:2
+[2025-10-05 17:18:11,080] 32 root -INFO - Data frame has columns:31
+[2025-10-05 17:18:11,080] 31 root -INFO - Required number of columns:2
+[2025-10-05 17:18:11,080] 32 root -INFO - Data frame has columns:31
+[2025-10-05 17:18:11,288] 26 root -INFO - data validation completed
+[2025-10-05 17:18:11,289] 29 root -INFO - data Transformation started
+[2025-10-05 17:18:11,289] 63 root -INFO - Entered initiate_data_transformation method of DataTransformation class
+[2025-10-05 17:18:11,289] 65 root -INFO - Starting data transformation
+[2025-10-05 17:18:11,331] 48 root -INFO - Entered get_data_trnasformer_object method of Trnasformation class
+[2025-10-05 17:18:11,332] 53 root -INFO - Initialise KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[2025-10-05 17:18:11,362] 43 root -INFO - Entered the save_object method of MainUtils class
+[2025-10-05 17:18:11,367] 47 root -INFO - Exited the save_object method of MainUtils class
+[2025-10-05 17:18:11,367] 43 root -INFO - Entered the save_object method of MainUtils class
+[2025-10-05 17:18:11,383] 47 root -INFO - Exited the save_object method of MainUtils class
+[2025-10-05 17:18:11,385] 63 root -INFO - Entered initiate_data_transformation method of DataTransformation class
+[2025-10-05 17:18:11,385] 65 root -INFO - Starting data transformation
+[2025-10-05 17:18:11,431] 48 root -INFO - Entered get_data_trnasformer_object method of Trnasformation class
+[2025-10-05 17:18:11,431] 53 root -INFO - Initialise KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[2025-10-05 17:18:11,456] 43 root -INFO - Entered the save_object method of MainUtils class
+[2025-10-05 17:18:11,461] 47 root -INFO - Exited the save_object method of MainUtils class
+[2025-10-05 17:18:11,462] 43 root -INFO - Entered the save_object method of MainUtils class
+[2025-10-05 17:18:11,466] 47 root -INFO - Exited the save_object method of MainUtils class
+[2025-10-05 17:18:11,467] 34 root -INFO - data transformation completed
+[2025-10-05 17:18:11,468] 36 root -INFO - Model Training started
+[2025-10-05 17:18:34,531] 43 root -INFO - Entered the save_object method of MainUtils class
+[2025-10-05 17:18:34,532] 47 root -INFO - Exited the save_object method of MainUtils class
+[2025-10-05 17:18:34,533] 43 root -INFO - Entered the save_object method of MainUtils class
+[2025-10-05 17:18:34,557] 47 root -INFO - Exited the save_object method of MainUtils class
+[2025-10-05 17:18:34,558] 139 root -INFO - Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='Artifacts\\10_05_2025_17_17_43\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=0.9916411824668705, precision_score=0.9898249898249898, recall_score=0.9934640522875817), test_metric_artifact=ClassificationMetricArtifact(f1_score=0.9741176470588235, precision_score=0.9635376260667183, recall_score=0.9849325931800159))
+[2025-10-05 17:18:34,561] 41 root -INFO - Model Training artifact created 

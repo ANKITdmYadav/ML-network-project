@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/ankit/Desktop/2NewML%20Project/Network%20Security/mlruns/0/models/m-a91e299610004b3c97f673fdfaf7470d/artifacts
+creation_timestamp: 1759665402318
+experiment_id: '0'
+last_updated_timestamp: 1759665410109
+model_id: m-a91e299610004b3c97f673fdfaf7470d
+model_type: null
+name: model
+source_run_id: 2f14563c4434470f9df5a5bda607b631
+status: 2
+status_message: null

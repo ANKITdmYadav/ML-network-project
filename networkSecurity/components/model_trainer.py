@@ -24,16 +24,16 @@ from sklearn.ensemble import (
     GradientBoostingClassifier,
     RandomForestClassifier,
 )
-import mlflow
-from urllib.parse import urlparse
+# import mlflow
+# from urllib.parse import urlparse
 
 # import dagshub
 #dagshub.init(repo_owner='krishnaik06', repo_name='networksecurity', mlflow=True)
 
 
-os.environ["MLFLOW_TRACKING_URI"] = "https://dagshub.com/ankityadavdm/ML_Network_Project.mlflow"
-os.environ["MLFLOW_TRACKING_USERNAME"] = "ankityadavdm"
-os.environ["MLFLOW_TRACKING_PASSWORD"] = "<be32e038d689637213b9e45628db9dc77b21ade0>"
+# os.environ["MLFLOW_TRACKING_URI"] = "https://dagshub.com/ankityadavdm/ML_Network_Project.mlflow"
+# os.environ["MLFLOW_TRACKING_USERNAME"] = "ankityadavdm"
+# os.environ["MLFLOW_TRACKING_PASSWORD"] = "<be32e038d689637213b9e45628db9dc77b21ade0>"
 # be32e038d689637213b9e45628db9dc77b21ade0
 # runmlflowtoken
 
@@ -65,9 +65,9 @@ class ModelTrainer:
         models = {
                 "Random Forest": RandomForestClassifier(verbose=1),
                 "Decision Tree": DecisionTreeClassifier(),
-                "Gradient Boosting": GradientBoostingClassifier(verbose=1),
-                "Logistic Regression": LogisticRegression(verbose=1),
-                "AdaBoost": AdaBoostClassifier(),
+                # "Gradient Boosting": GradientBoostingClassifier(verbose=1),
+                # "Logistic Regression": LogisticRegression(verbose=1),
+                # "AdaBoost": AdaBoostClassifier(),
             }
         params={
             "Decision Tree": {
@@ -79,7 +79,7 @@ class ModelTrainer:
                 # 'criterion':['gini', 'entropy', 'log_loss'],
                 
                 # 'max_features':['sqrt','log2',None],
-                'n_estimators': [8,16,32,128,256]
+                'n_estimators': [8,128,256]
             },
             "Gradient Boosting":{
                 # 'loss':['log_loss', 'exponential'],
@@ -118,7 +118,7 @@ class ModelTrainer:
         y_test_pred=best_model.predict(x_test)
         classification_test_metric=get_classification_score(y_true=y_test,y_pred=y_test_pred)
 
-        self.track_mlflow(best_model,classification_test_metric,)
+        # self.track_mlflow(best_model,classification_test_metric,)
 
         preprocessor = load_object(file_path=self.data_transformation_artifact.transformed_object_file_path)
             

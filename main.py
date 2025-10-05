@@ -7,7 +7,7 @@ from networkSecurity.exception.exception import NetworkSecurityException
 from networkSecurity.logging.logger import logging
 from networkSecurity.entity.config_entity import DataIngestionConfig,DataValidationConfig,DataTransformationConfig,ModelTrainerConfig
 from networkSecurity.entity.config_entity import TrainingPipelineConfig
-
+import sys
 
 if __name__=='__main__':
     try:
@@ -36,11 +36,11 @@ if __name__=='__main__':
         logging.info("Model Training started")
         model_trainer_config=ModelTrainerConfig(trainingpipelineconfig)
         model_trainer=ModelTrainer(model_trainer_config=model_trainer_config,data_transformation_artifact=data_transformation_artifact)
-        model_trainer_artifact=model_trainer.initiate_model_trainer
+        model_trainer_artifact=model_trainer.initiate_model_trainer()
 
         logging.info("Model Training artifact created ")
 
         
     except Exception as e:
-        raise NetworkSecurityException(e)
+        raise NetworkSecurityException(e,sys)
 
