@@ -24,11 +24,11 @@ from sklearn.ensemble import (
     GradientBoostingClassifier,
     RandomForestClassifier,
 )
-# import mlflow
+import mlflow
 # from urllib.parse import urlparse
 
-# import dagshub
-#dagshub.init(repo_owner='krishnaik06', repo_name='networksecurity', mlflow=True)
+import dagshub
+dagshub.init(repo_owner='ankityadavdm', repo_name='ML-network-project', mlflow=True)
 
 
 # os.environ["MLFLOW_TRACKING_URI"] = "https://dagshub.com/ankityadavdm/ML_Network_Project.mlflow"
@@ -58,7 +58,7 @@ class ModelTrainer:
             mlflow.log_metric("f1_score",f1_score)
             mlflow.log_metric("precision",precision_score)
             mlflow.log_metric("recall_score",recall_score)
-            mlflow.sklearn.log_model(best_model,"model")
+            # mlflow.sklearn.log_model(best_model,"model")
         
         
     def train_model(self,X_train,y_train,x_test,y_test):
