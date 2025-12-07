@@ -65,7 +65,7 @@ if __name__=="__main__":
    app_run(app,host="localhost",port=8000)
 
 
-@app.get("/predict")
+@app.post("/predict")
 async def predict_route(request:Request,file:UploadFile=File(...)):
     try:
         df=pd.read_csv(file.file)
@@ -87,3 +87,6 @@ async def predict_route(request:Request,file:UploadFile=File(...)):
         
     except Exception as e:
             raise NetworkSecurityException(e,sys)
+
+if __name__=="__main__":
+    app_run(app,host="0.0.0.0",port=8000)

@@ -1,8 +1,8 @@
 import os,sys,json
 
-# to call all env var and can push them
 from dotenv import load_dotenv
 load_dotenv()
+# load_dotenv is done to import mongodb from .env folder
 
 MONGO_DB_URL=os.getenv("MONGO_DB_URL")
 print(MONGO_DB_URL)

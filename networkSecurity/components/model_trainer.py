@@ -27,17 +27,18 @@ from sklearn.ensemble import (
 import mlflow
 # from urllib.parse import urlparse
 
-import dagshub
-dagshub.init(repo_owner='ankityadavdm', repo_name='ML-network-project', mlflow=True)
 
-
-# os.environ["MLFLOW_TRACKING_URI"] = "https://dagshub.com/ankityadavdm/ML_Network_Project.mlflow"
-# os.environ["MLFLOW_TRACKING_USERNAME"] = "ankityadavdm"
-# os.environ["MLFLOW_TRACKING_PASSWORD"] = "<be32e038d689637213b9e45628db9dc77b21ade0>"
+os.environ["MLFLOW_TRACKING_URI"] = "https://dagshub.com/ankityadavdm/ML_Network_Project.mlflow"
+os.environ["MLFLOW_TRACKING_USERNAME"] = "ankityadavdm"
+os.environ["MLFLOW_TRACKING_PASSWORD"] = "<be32e038d689637213b9e45628db9dc77b21ade0>"
 # be32e038d689637213b9e45628db9dc77b21ade0
 # runmlflowtoken
+# 2ef9dc84997807e30e446d81563efe2eec3e4489
+# e4d0b5b2adac39bdb5bc9ac520d96db2aad7e342
 
 
+import dagshub
+dagshub.init(repo_owner='ankityadavdm', repo_name='ML-network-project', mlflow=True)
 
 
 
@@ -59,6 +60,12 @@ class ModelTrainer:
             mlflow.log_metric("precision",precision_score)
             mlflow.log_metric("recall_score",recall_score)
             # mlflow.sklearn.log_model(best_model,"model")
+            # above can't be done DagsHub cannot store models inside MLflow automatically.
+
+            save_object("final_model/model.pkl", best_model)
+
+            # Upload to DagsHub force
+            mlflow.log_artifact("final_model/model.pkl")
         
         
     def train_model(self,X_train,y_train,x_test,y_test):
