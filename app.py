@@ -1,6 +1,5 @@
 import sys
 import os
-os.environ["DAGSHUB_AUTH_METHOD"] = "disabled"
 
 import certifi
 ca = certifi.where()
@@ -24,7 +23,6 @@ import pandas as pd
 from networkSecurity.utils.main_utils.utils import load_object
 
 from networkSecurity.utils.ml_utils.model.estimator import NetworkModel
-
 
 
 client = pymongo.MongoClient(mongo_db_url, tlsCAFile=ca)
