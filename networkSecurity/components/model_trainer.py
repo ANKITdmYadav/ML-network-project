@@ -38,6 +38,12 @@ os.environ["MLFLOW_TRACKING_PASSWORD"] = "<be32e038d689637213b9e45628db9dc77b21a
 
 
 import dagshub
+
+dagshub.auth.add_app_token(
+    username=os.getenv("DAGSHUB_USER"),
+    token=os.getenv("DAGSHUB_TOKEN"),
+)
+
 dagshub.init(repo_owner='ankityadavdm', repo_name='ML-network-project', mlflow=True)
 
 
