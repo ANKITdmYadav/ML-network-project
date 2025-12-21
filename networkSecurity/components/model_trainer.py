@@ -25,7 +25,7 @@ from sklearn.ensemble import (
     RandomForestClassifier,
 )
 import mlflow
-# from urllib.parse import urlparse
+#  from urllib.parse import urlparse
 
 
 os.environ["MLFLOW_TRACKING_URI"] = "https://dagshub.com/ankityadavdm/ML_Network_Project.mlflow"
